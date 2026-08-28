@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TaskManager" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="dispatcher">
+				<Option output="bin/Debug/dispatcher" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-std=c17" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lcomctl32" />
+					<Add option="-lgdi32" />
+					<Add option="-luser32" />
+					<Add option="-lkernel32" />
+					<Add option="-lwinmm" />
+					<Add option="-lws2_32" />
+					<Add library="comctl32" />
+					<Add library="gdi32" />
+					<Add library="user32" />
+					<Add library="kernel32" />
+					<Add library="winmm" />
+					<Add library="ws2_32" />
+				</Linker>
+			</Target>
+			<Target title="worker">
+				<Option output="bin/Debug/worker" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+			</Target>
+			<Target title="benchmark">
+				<Option output="TaskExecuter" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c17" />
+			<Add option="-g" />
+		</Compiler>
+		<Unit filename="benchmark.c">
+			<Option compilerVar="CC" />
+			<Option target="benchmark" />
+		</Unit>
+		<Unit filename="common.h">
+			<Option target="dispatcher" />
+			<Option target="worker" />
+		</Unit>
+		<Unit filename="dispatcher.c">
+			<Option compilerVar="CC" />
+			<Option target="dispatcher" />
+		</Unit>
+		<Unit filename="gui_dashboard.c">
+			<Option compilerVar="CC" />
+			<Option target="dispatcher" />
+		</Unit>
+		<Unit filename="gui_dashboard.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="server/http_server.c">
+			<Option compilerVar="CC" />
+			<Option target="dispatcher" />
+		</Unit>
+		<Unit filename="server/http_server.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="threadpool.c">
+			<Option compilerVar="CC" />
+			<Option target="worker" />
+		</Unit>
+		<Unit filename="threadpool.h">
+			<Option target="worker" />
+		</Unit>
+		<Unit filename="worker.c">
+			<Option compilerVar="CC" />
+			<Option target="worker" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
